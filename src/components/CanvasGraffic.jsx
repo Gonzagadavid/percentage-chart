@@ -58,7 +58,7 @@ class CanvasGraffic extends Component {
   drawBars() {
     const {
       data, colors, widthBar, width, height, fontSizeBar, fontBar, maxPercent,
-      fontColorBlack, fontColor, top,
+      fontColorBlack, fontColor, top, legend,
     } = this.props;
     const canvas = this.canvasRef.current;
     const fontSize = +fontSizeBar || 20;
@@ -84,13 +84,28 @@ class CanvasGraffic extends Component {
       if (top) context.fillText(percents, x + (widthBar / 4), initBar - cents - (fontSizeBar / 2));
       x += (pass + +widthBar);
     });
+    if (legend) this.legendCreate();
   }
 
   legendCreate() {
+    const {
+      fontLegendSize, borderLegend, colorBorderLegend, // legend, fontLegend,colorLegend,
+      data, width,
+    } = this.props;
     const canvas = this.canvasRef.current;
     const context = canvas.getContext('2d');
-    context.font = '30px serif';
-    context.fillText('Hello world', 0, 100);
+    const maxLength = Math.max(...Object.values(data).map((val) => val.length)) * +fontLegendSize;
+    console.log(data);
+    const legendWith = maxLength + (+fontLegendSize * 5);
+    const legendHeight = ((+fontLegendSize * 2) * Object.keys(data).length) + (+fontLegendSize * 2);
+    const xInit = width - (legendWith + 10);
+    const yInit = 10;
+    context.fillStyle = colorBorderLegend;
+    context.fillRect(
+      xInit - borderLegend,
+      yInit - borderLegend, legendWith + borderLegend,
+      legendHeight + borderLegend,
+    );
   }
 
   // drawRect() {

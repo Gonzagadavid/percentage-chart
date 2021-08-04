@@ -1,5 +1,5 @@
 import {
-  ADD_BACKGROUND, ADD_COLOR, ADD_DATA, ADD_STYLEBAR,
+  ADD_BACKGROUND, ADD_COLOR, ADD_DATA, ADD_LEGEND, ADD_STYLEBAR,
 } from '../actions';
 
 const INITIAL_STATE = {
@@ -20,6 +20,12 @@ const INITIAL_STATE = {
   fontColorBlack: false,
   fontColor: 'black',
   top: false,
+  legend: false,
+  fontLegend: 'monospace',
+  fontLegendSize: '20',
+  colorLegend: '#fff',
+  borderLegend: 1,
+  colorBorderLegend: 'black',
 };
 
 const reducerData = (state = INITIAL_STATE, action) => {
@@ -31,29 +37,13 @@ const reducerData = (state = INITIAL_STATE, action) => {
       return { ...state, colors: [...state.colors, action.state] };
 
     case ADD_BACKGROUND:
-      return {
-        ...state,
-        backgroundColor: action.state.backgroundColor,
-        lineColor: action.state.lineColor,
-        fontSizeBackground: action.state.fontSizeBackground,
-        width: action.state.width,
-        height: action.state.height,
-        widthLine: action.state.widthLine,
-        fontBackground: action.state.fontBackground,
-        maxPercent: action.state.maxPercent,
-        percentSide: action.state.percentSide,
-      };
+      return { ...state, ...action.state };
 
     case ADD_STYLEBAR:
-      return {
-        ...state,
-        widthBar: action.state.widthBar,
-        fontSizeBar: action.state.fontSizeBar,
-        fontBar: action.state.fontBar,
-        fontColorBlack: action.state.fontColorBlack,
-        fontColor: action.state.fontColor,
-        top: action.state.top,
-      };
+      return { ...state, ...action.state };
+
+    case ADD_LEGEND:
+      return { ...state, ...action.state };
 
     default: return state;
   }
