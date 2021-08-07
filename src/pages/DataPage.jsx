@@ -1,4 +1,5 @@
 import React from 'react';
+import EditBarContainer from '../components/EditBarContainer';
 import InputBackground from '../components/InputBackground';
 import InputBar from '../components/InputBar';
 import InputData from '../components/InputData';
@@ -8,6 +9,7 @@ const DataPage = () => (
   <div>
     <InputBackground />
     <InputData />
+    <EditBarContainer />
     <InputBar />
     <Legend />
   </div>

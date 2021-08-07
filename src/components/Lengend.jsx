@@ -14,6 +14,8 @@ class Legend extends Component {
       colorLegend: '#fff',
       borderLegend: 1,
       colorBorderLegend: 'black',
+      legendSide: 'right',
+      legendVertical: 'atop',
     };
     this.handlerChange = this.handlerChange.bind(this);
     this.insertLegenda = this.insertLegenda.bind(this);
@@ -41,7 +43,7 @@ class Legend extends Component {
     return (
       <fieldset>
         <legend>Legenda</legend>
-        <Input type="checkbox" name="legend" labelText="Com legenda" value={legend} change={this.handlerChange} />
+        <Input type="checkbox" name="legend" labelText="Com legenda" checked={legend} change={this.handlerChange} />
         { legend
         && (
         <>
@@ -57,6 +59,10 @@ class Legend extends Component {
           <Input type="color" name="colorLegend" labelText="Cor de fundo da legenda:" value={colorLegend} change={this.handlerChange} />
           <Input type="number" name="borderLegend" labelText="Largura da borda:" value={borderLegend} change={this.handlerChange} />
           <Input type="color" name="colorBorderLegend" labelText="Cor da borda:" value={colorBorderLegend} change={this.handlerChange} />
+          <Input type="radio" name="legendSide" labelText="Esquerdo" value="left" change={this.handlerChange} />
+          <Input type="radio" name="legendSide" labelText="Direito" value="right" change={this.handlerChange} />
+          <Input type="radio" name="legendVertical" labelText="Superior" value="atop" change={this.handlerChange} />
+          <Input type="radio" name="legendVertical" labelText="Inferior" value="bottom" change={this.handlerChange} />
           <button type="button" onClick={this.insertLegenda}>Aplicar</button>
         </>
         )}

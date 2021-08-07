@@ -8,7 +8,7 @@ const GrafficPage = (props) => {
     fontSizeBackground, widthLine, fontBackground, maxPercent, percentSide,
     widthBar, fontSizeBar, fontColorBlack, fontColor, top,
     legend, fontLegend, fontLegendSize, colorLegend, borderLegend, colorBorderLegend,
-    fontColorLegend, baseName,
+    fontColorLegend, baseName, legendSide, legendVertical,
   } = props;
 
   return (
@@ -40,6 +40,8 @@ const GrafficPage = (props) => {
         borderLegend={borderLegend}
         colorBorderLegend={colorBorderLegend}
         fontColorLegend={fontColorLegend}
+        legendSide={legendSide}
+        legendVertical={legendVertical}
       />
     </div>
   );
@@ -71,5 +73,7 @@ const mapStateToProps = (state) => ({
   borderLegend: state.borderLegend,
   colorBorderLegend: state.colorBorderLegend,
   baseName: state.baseName,
+  legendSide: state.legendSide,
+  legendVertical: state.legendVertical,
 });
 export default connect(mapStateToProps)(GrafficPage);

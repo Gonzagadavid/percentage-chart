@@ -47,8 +47,8 @@ class InputBackground extends Component {
         <Input type="text" name="fontBackground" labelText="Fonte de fundo:" value={fontBackground} change={this.handlerChange} />
         <Input type="number" name="width" labelText="Largura do grafico:" value={width} change={this.handlerChange} />
         <Input type="number" name="height" labelText="Altura do grafico:" value={height} change={this.handlerChange} />
-        <Input type="radio" name="percentSide" labelText="Esquerdo:" value="left" change={this.handlerChange} />
-        <Input type="radio" name="percentSide" labelText="Direito:" value="right" change={this.handlerChange} />
+        <Input type="radio" name="percentSide" labelText="Esquerdo" value="left" change={this.handlerChange} />
+        <Input type="radio" name="percentSide" labelText="Direito" value="right" change={this.handlerChange} />
         <Select
           name="maxPercent"
           labelText="Porcetagem a ser exibida:"

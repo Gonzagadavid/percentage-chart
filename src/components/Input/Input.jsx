@@ -7,19 +7,21 @@ import React from 'react';
 
 const Input = (props) => {
   const {
-    labelText, value, change, type, name,
+    labelText, value, change, type, name, checked,
   } = props;
 
   return (
     <label htmlFor={name}>
-      {labelText}
+      {type !== 'radio' ? labelText : ''}
       <input
         type={type}
         id={name}
         value={value}
+        checked={checked}
         onChange={change}
         name={name}
       />
+      {type === 'radio' ? labelText : ''}
     </label>
   );
 };

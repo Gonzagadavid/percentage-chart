@@ -89,7 +89,7 @@ class CanvasGraffic extends Component {
   legendCreate() {
     const {
       fontLegendSize, borderLegend, colorBorderLegend, colorLegend, colors, fontLegend,
-      data, width, fontColorLegend,
+      data, width, fontColorLegend, legendSide, legendVertical, height,
     } = this.props;
     const canvas = this.canvasRef.current;
     const context = canvas.getContext('2d');
@@ -97,8 +97,8 @@ class CanvasGraffic extends Component {
     const legendWith = maxLength + (+fontLegendSize * 5);
     const line = (+fontLegendSize + +fontLegendSize / 2);
     const legendHeight = (line * Object.keys(data).length) + (+fontLegendSize * 2);
-    const xInit = width - (legendWith + 10);
-    const yInit = 10;
+    const xInit = legendSide === 'right' ? width - (legendWith + 10) : 10;
+    const yInit = legendVertical === 'atop' ? 10 : height - (legendHeight + 10);
     context.fillStyle = colorBorderLegend;
     context.fillRect(
       xInit - borderLegend,
