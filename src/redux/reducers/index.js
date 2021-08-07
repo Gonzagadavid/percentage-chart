@@ -10,6 +10,8 @@ const INITIAL_STATE = {
   fontSizeBackground: '10',
   width: '1000',
   height: '500',
+  widthBorder: '1',
+  borderColor: 'black',
   widthLine: '1',
   fontBackground: 'monospace',
   maxPercent: '100%',

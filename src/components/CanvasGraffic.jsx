@@ -126,14 +126,16 @@ class CanvasGraffic extends Component {
   }
 
   render() {
-    const { width, height, backgroundColor } = this.props;
+    const {
+      width, height, backgroundColor, widthBorder, borderColor,
+    } = this.props;
     return (
       <canvas
         className="canvas"
         ref={this.canvasRef}
         width={width}
         height={height}
-        style={{ border: '1px solid black', backgroundColor }}
+        style={{ border: `${widthBorder}px solid ${borderColor}`, backgroundColor }}
       />
     );
   }

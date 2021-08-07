@@ -17,6 +17,8 @@ class InputBackground extends Component {
       widthLine: '1',
       maxPercent: '100%',
       percentSide: 'left',
+      widthBorder: '1',
+      borderColor: 'black',
     };
     this.handlerChange = this.handlerChange.bind(this);
     this.insertBackground = this.insertBackground.bind(this);
@@ -35,7 +37,7 @@ class InputBackground extends Component {
   render() {
     const {
       backgroundColor, lineColor, fontSizeBackground, width, height,
-      widthLine, fontBackground, maxPercent,
+      widthLine, fontBackground, maxPercent, widthBorder, borderColor,
     } = this.state;
     return (
       <fieldset>
@@ -47,6 +49,8 @@ class InputBackground extends Component {
         <Input type="text" name="fontBackground" labelText="Fonte de fundo:" value={fontBackground} change={this.handlerChange} />
         <Input type="number" name="width" labelText="Largura do grafico:" value={width} change={this.handlerChange} />
         <Input type="number" name="height" labelText="Altura do grafico:" value={height} change={this.handlerChange} />
+        <Input type="number" name="widthBorder" labelText="Espessura da borda:" value={widthBorder} change={this.handlerChange} />
+        <Input type="color" name="borderColor" labelText="Cor da borda:" value={borderColor} change={this.handlerChange} />
         <Input type="radio" name="percentSide" labelText="Esquerdo" value="left" change={this.handlerChange} />
         <Input type="radio" name="percentSide" labelText="Direito" value="right" change={this.handlerChange} />
         <Select
