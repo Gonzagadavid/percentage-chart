@@ -10,6 +10,7 @@ class Legend extends Component {
       legend: false,
       fontLegend: 'monospace',
       fontLegendSize: '20',
+      fontColorLegend: 'black',
       colorLegend: '#fff',
       borderLegend: 1,
       colorBorderLegend: 'black',
@@ -19,8 +20,10 @@ class Legend extends Component {
   }
 
   handlerChange({ target }) {
-    const { name, value, checked } = target;
-    const checkbox = name === 'legend';
+    const {
+      name, value, checked, type,
+    } = target;
+    const checkbox = type === 'checkbox';
     const valueInput = checkbox ? checked : value;
     this.setState({ [name]: valueInput });
   }
@@ -33,6 +36,7 @@ class Legend extends Component {
   render() {
     const {
       legend, fontLegend, fontLegendSize, colorLegend, borderLegend, colorBorderLegend,
+      fontColorLegend,
     } = this.state;
     return (
       <fieldset>
@@ -49,9 +53,10 @@ class Legend extends Component {
             value={fontLegendSize}
             change={this.handlerChange}
           />
-          <Input type="color" name="colorLegend" labelText="Cor de fundo da legenda" value={colorLegend} change={this.handlerChange} />
-          <Input type="number" name="borderLegend" labelText="Largura da borda" value={borderLegend} change={this.handlerChange} />
-          <Input type="color" name="colorBorderLegend" labelText="Cor da borda" value={colorBorderLegend} change={this.handlerChange} />
+          <Input type="color" name="fontColorLegend" labelText="Cor da fonte:" value={fontColorLegend} change={this.handlerChange} />
+          <Input type="color" name="colorLegend" labelText="Cor de fundo da legenda:" value={colorLegend} change={this.handlerChange} />
+          <Input type="number" name="borderLegend" labelText="Largura da borda:" value={borderLegend} change={this.handlerChange} />
+          <Input type="color" name="colorBorderLegend" labelText="Cor da borda:" value={colorBorderLegend} change={this.handlerChange} />
           <button type="button" onClick={this.insertLegenda}>Aplicar</button>
         </>
         )}

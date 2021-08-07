@@ -13,14 +13,17 @@ class InputBar extends Component {
       fontColor: 'black',
       fontBar: 'monospace',
       top: false,
+      baseName: false,
     };
     this.handlerChange = this.handlerChange.bind(this);
     this.insertStyleBar = this.insertStyleBar.bind(this);
   }
 
   handlerChange({ target }) {
-    const { name, value, checked } = target;
-    const checkbox = name === 'top' || name === 'fontColorBlack';
+    const {
+      name, value, checked, type,
+    } = target;
+    const checkbox = type === 'checkbox';
     const valueInput = checkbox ? checked : value;
     this.setState({ [name]: valueInput });
   }
@@ -32,7 +35,7 @@ class InputBar extends Component {
 
   render() {
     const {
-      widthBar, fontSizeBar, fontColorBlack, fontColor, top, fontBar,
+      widthBar, fontSizeBar, fontColorBlack, fontColor, top, fontBar, baseName,
     } = this.state;
     return (
       <fieldset>
@@ -82,6 +85,13 @@ class InputBar extends Component {
           name="top"
           labelText="Exibir a porcentagem no topo da barra:"
           value={top}
+          change={this.handlerChange}
+        />
+        <Input
+          type="checkbox"
+          name="baseName"
+          labelText="Exibir o nome na base da barra:"
+          value={baseName}
           change={this.handlerChange}
         />
         <button type="button" onClick={this.insertStyleBar}>Aplicar</button>

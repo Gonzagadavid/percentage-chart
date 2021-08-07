@@ -9,7 +9,7 @@ class InputData extends Component {
     this.state = {
       dataName: '',
       qty: 0,
-      color: '',
+      color: 'black',
     };
     this.handlerChange = this.handlerChange.bind(this);
     this.insertData = this.insertData.bind(this);
