@@ -12,8 +12,8 @@ class InputBackground extends Component {
       lineColor: '#000',
       fontSizeBackground: '10',
       fontBackground: 'monospace',
-      width: '1000',
-      height: '500',
+      widthGraph: '1000',
+      heightGraph: '500',
       widthLine: '1',
       maxPercent: '100%',
       percentSide: 'left',
@@ -36,7 +36,7 @@ class InputBackground extends Component {
 
   render() {
     const {
-      backgroundColor, lineColor, fontSizeBackground, width, height,
+      backgroundColor, lineColor, fontSizeBackground, widthGraph, heightGraph,
       widthLine, fontBackground, maxPercent, widthBorder, borderColor,
     } = this.state;
     return (
@@ -47,8 +47,8 @@ class InputBackground extends Component {
         <Input type="number" name="widthLine" labelText="Largura da linha:" value={widthLine} change={this.handlerChange} />
         <Input type="number" name="fontSizeBackground" labelText="Tamanho da letra:" value={fontSizeBackground} change={this.handlerChange} />
         <Input type="text" name="fontBackground" labelText="Fonte de fundo:" value={fontBackground} change={this.handlerChange} />
-        <Input type="number" name="width" labelText="Largura do grafico:" value={width} change={this.handlerChange} />
-        <Input type="number" name="height" labelText="Altura do grafico:" value={height} change={this.handlerChange} />
+        <Input type="number" name="widthGraph" labelText="Largura do grafico:" value={widthGraph} change={this.handlerChange} />
+        <Input type="number" name="heightGraph" labelText="Altura do grafico:" value={heightGraph} change={this.handlerChange} />
         <Input type="number" name="widthBorder" labelText="Espessura da borda:" value={widthBorder} change={this.handlerChange} />
         <Input type="color" name="borderColor" labelText="Cor da borda:" value={borderColor} change={this.handlerChange} />
         <Input type="radio" name="percentSide" labelText="Esquerdo" value="left" change={this.handlerChange} />

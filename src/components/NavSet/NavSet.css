@@ -1,0 +1,23 @@
+.NavSet {
+  display: flex;
+  background-color: black;
+  justify-content: space-around;
+}
+
+.NavSet ul {
+  display: flex;  
+}
+
+.NavSet li {
+  list-style: none;
+  padding: 5px 20px;
+}
+
+.NavSet a {
+  color: white;
+  text-decoration: none;
+}
+
+.NavSet a:visited {
+  color: white;
+}

@@ -7,7 +7,7 @@ class Legend extends Component {
   constructor() {
     super();
     this.state = {
-      legend: false,
+      withLegend: false,
       fontLegend: 'monospace',
       fontLegendSize: '20',
       fontColorLegend: 'black',
@@ -27,7 +27,9 @@ class Legend extends Component {
     } = target;
     const checkbox = type === 'checkbox';
     const valueInput = checkbox ? checked : value;
-    this.setState({ [name]: valueInput });
+    this.setState({ [name]: valueInput }, () => {
+      if (name === 'withLegend') this.insertLegenda();
+    });
   }
 
   insertLegenda() {
@@ -37,14 +39,14 @@ class Legend extends Component {
 
   render() {
     const {
-      legend, fontLegend, fontLegendSize, colorLegend, borderLegend, colorBorderLegend,
+      withLegend, fontLegend, fontLegendSize, colorLegend, borderLegend, colorBorderLegend,
       fontColorLegend,
     } = this.state;
     return (
       <fieldset>
         <legend>Legenda</legend>
-        <Input type="checkbox" name="legend" labelText="Com legenda" checked={legend} change={this.handlerChange} />
-        { legend
+        <Input type="checkbox" name="withLegend" labelText="Com legenda" checked={withLegend} change={this.handlerChange} />
+        { withLegend
         && (
         <>
           <Input type="text" name="fontLegend" labelText="Fonte da legenda:" value={fontLegend} change={this.handlerChange} />

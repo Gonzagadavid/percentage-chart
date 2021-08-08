@@ -12,7 +12,7 @@ class InputBar extends Component {
       fontColorBlack: false,
       fontColor: 'black',
       fontBar: 'monospace',
-      top: false,
+      topPercent: false,
       baseName: true,
     };
     this.handlerChange = this.handlerChange.bind(this);
@@ -35,7 +35,7 @@ class InputBar extends Component {
 
   render() {
     const {
-      widthBar, fontSizeBar, fontColorBlack, fontColor, top, fontBar, baseName,
+      widthBar, fontSizeBar, fontColorBlack, fontColor, topPercent, fontBar, baseName,
     } = this.state;
     return (
       <fieldset>
@@ -82,9 +82,9 @@ class InputBar extends Component {
         }
         <Input
           type="checkbox"
-          name="top"
+          name="topPercent"
           labelText="Exibir a porcentagem no topo da barra:"
-          checked={top}
+          checked={topPercent}
           change={this.handlerChange}
         />
         <Input

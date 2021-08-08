@@ -27,22 +27,24 @@ class CanvasGraffic extends Component {
 
   drawbackgound() {
     const {
-      width, height, lineColor, fontSizeBackground, widthLine,
-      fontBackground, maxPercent, percentSide,
+      style: {
+        widthGraph, heightGraph, lineColor, fontSizeBackground, widthLine,
+        fontBackground, percentSide,
+      }, maxPercent,
     } = this.props;
-    const sidePercent = percentSide === 'right' ? width - (fontSizeBackground * 4) : 10;
+    const sidePercent = percentSide === 'right' ? widthGraph - (fontSizeBackground * 4) : 10;
     const percent = maxPercent === '70%' ? 8 : maxPercent === '50%' ? 6 : 11;
     const canvas = this.canvasRef.current;
     const context = canvas.getContext('2d');
-    const largeCent = height / (percent + 1);
-    let pass = height - largeCent;
+    const largeCent = heightGraph / (percent + 1);
+    let pass = heightGraph - largeCent;
     let cents = 0;
     Array(percent).fill(0).forEach(() => {
       context.beginPath();
       context.strokeStyle = lineColor;
       context.lineWidth = widthLine;
       context.moveTo(0, pass);
-      context.lineTo(width, pass);
+      context.lineTo(widthGraph, pass);
       context.stroke();
       context.closePath();
       context.fillStyle = lineColor;
@@ -56,40 +58,46 @@ class CanvasGraffic extends Component {
 
   drawBars() {
     const {
-      data, colors, widthBar, width, height, fontSizeBar, fontBar, maxPercent,
-      fontColorBlack, fontColor, top, legend, baseName,
+      style: {
+        widthBar, widthGraph, heightGraph, fontSizeBar, fontBar, maxPercent,
+        fontColorBlack, fontColor, topPercent, withLegend, baseName,
+      }, data, colors,
     } = this.props;
     const canvas = this.canvasRef.current;
     const fontSize = +fontSizeBar || 20;
     const fontType = fontBar || 'serif';
     const percent = maxPercent === '70%' ? 8 : maxPercent === '50%' ? 6 : 11;
-    const largeCent = height / (percent + 1);
+    const largeCent = heightGraph / (percent + 1);
     const context = canvas.getContext('2d');
     const keys = Object.keys(data);
     const total = Object.values(data).reduce((sum, crr) => sum + +crr, 0);
-    const initBar = height - (height / (percent + 1));
+    const initBar = heightGraph - (heightGraph / (percent + 1));
     const pass = +widthBar / 2;
-    const positionInt = (width / 2) - ((keys.length / 2) * (+widthBar + pass));
+    const positionInt = (widthGraph / 2) - ((keys.length / 2) * (+widthBar + pass));
     let x = positionInt;
 
     keys.forEach((name, i) => {
       context.font = `${fontSize}px ${fontType}`;
       const percents = `${((+data[name] * 100) / total).toFixed(1)}%`;
       const cents = ((+data[name] * (10 * largeCent)) / total);
-      context.fillStyle = colors[i];
+      context.fillStyle = colors[i] || '#aaa';
       context.fillRect(x, initBar, +widthBar, -cents);
       if (fontColorBlack) context.fillStyle = fontColor || 'black';
       if (baseName) context.fillText(name, x + (widthBar / 8), initBar + fontSize);
-      if (top) context.fillText(percents, x + (widthBar / 4), initBar - cents - (fontSizeBar / 2));
+      if (topPercent) {
+        context.fillText(percents, x + (widthBar / 4), initBar - cents - (fontSizeBar / 2));
+      }
       x += (pass + +widthBar);
     });
-    if (legend) this.legendCreate();
+    if (withLegend) this.legendCreate();
   }
 
   legendCreate() {
     const {
-      fontLegendSize, borderLegend, colorBorderLegend, colorLegend, colors, fontLegend,
-      data, width, fontColorLegend, legendSide, legendVertical, height,
+      style: {
+        fontLegendSize, borderLegend, colorBorderLegend, colorLegend, fontLegend,
+        widthGraph, fontColorLegend, legendSide, legendVertical, heightGraph,
+      }, data, colors,
     } = this.props;
     const canvas = this.canvasRef.current;
     const context = canvas.getContext('2d');
@@ -97,8 +105,8 @@ class CanvasGraffic extends Component {
     const legendWith = maxLength + (+fontLegendSize * 5);
     const line = (+fontLegendSize + +fontLegendSize / 2);
     const legendHeight = (line * Object.keys(data).length) + (+fontLegendSize * 2);
-    const xInit = legendSide === 'right' ? width - (legendWith + 10) : 10;
-    const yInit = legendVertical === 'atop' ? 10 : height - (legendHeight + 10);
+    const xInit = legendSide === 'right' ? widthGraph - (legendWith + 10) : 10;
+    const yInit = legendVertical === 'atop' ? 10 : heightGraph - (legendHeight + 10);
     context.fillStyle = colorBorderLegend;
     context.fillRect(
       xInit - borderLegend,
@@ -127,14 +135,16 @@ class CanvasGraffic extends Component {
 
   render() {
     const {
-      width, height, backgroundColor, widthBorder, borderColor,
+      style: {
+        widthGraph, heightGraph, backgroundColor, widthBorder, borderColor,
+      },
     } = this.props;
     return (
       <canvas
         className="canvas"
         ref={this.canvasRef}
-        width={width}
-        height={height}
+        width={widthGraph}
+        height={heightGraph}
         style={{ border: `${widthBorder}px solid ${borderColor}`, backgroundColor }}
       />
     );

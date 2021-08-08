@@ -1,0 +1,13 @@
+.copy-button {
+  display: inline-block ;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: end;
+  background-color: blue;
+}
+
+.language-javascript {
+  position: absolute;
+  width: 80%;
+}

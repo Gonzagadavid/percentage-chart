@@ -4,56 +4,28 @@ import CanvasGraffic from '../components/CanvasGraffic';
 
 const GrafficPage = (props) => {
   const {
-    data, colors, height, width, backgroundColor, lineColor, fontBar,
-    fontSizeBackground, widthLine, fontBackground, maxPercent, percentSide,
-    widthBar, fontSizeBar, fontColorBlack, fontColor, top,
-    legend, fontLegend, fontLegendSize, colorLegend, borderLegend, colorBorderLegend,
-    fontColorLegend, baseName, legendSide, legendVertical, widthBorder, borderColor,
+    data, colors, maxPercent, style,
   } = props;
 
   return (
     <div className="content">
       <h2>Grafico com barras</h2>
       <CanvasGraffic
-        width={width}
-        height={height}
-        backgroundColor={backgroundColor}
-        lineColor={lineColor}
-        fontSizeBackground={fontSizeBackground}
-        fontBackground={fontBackground}
-        widthLine={widthLine}
-        maxPercent={maxPercent}
-        percentSide={percentSide}
+        style={style}
         data={data}
+        maxPercent={maxPercent}
         colors={colors}
-        widthBar={widthBar}
-        fontSizeBar={fontSizeBar}
-        fontBar={fontBar}
-        fontColorBlack={fontColorBlack}
-        fontColor={fontColor}
-        top={top}
-        baseName={baseName}
-        legend={legend}
-        fontLegend={fontLegend}
-        fontLegendSize={fontLegendSize}
-        colorLegend={colorLegend}
-        borderLegend={borderLegend}
-        colorBorderLegend={colorBorderLegend}
-        fontColorLegend={fontColorLegend}
-        legendSide={legendSide}
-        legendVertical={legendVertical}
-        widthBorder={widthBorder}
-        borderColor={borderColor}
       />
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
+  style: state,
   data: state.data,
   colors: state.colors,
-  width: state.width,
-  height: state.height,
+  widthGraph: state.widthGraph,
+  heightGraph: state.heightGraph,
   widthBorder: state.widthBorder,
   backgroundColor: state.backgroundColor,
   lineColor: state.lineColor,
@@ -67,8 +39,8 @@ const mapStateToProps = (state) => ({
   fontBar: state.fontBar,
   fontColorBlack: state.fontColorBlack,
   fontColor: state.fontColor,
-  top: state.top,
-  legend: state.legend,
+  topPercent: state.topPercent,
+  withLegend: state.withLegend,
   fontLegend: state.fontLegend,
   fontLegendSize: state.fontLegendSize,
   fontColorLegend: state.fontColorLegend,
