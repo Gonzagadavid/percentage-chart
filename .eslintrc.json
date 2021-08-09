@@ -19,6 +19,7 @@
     ],
     "rules": {
         "react/prop-types": "off",
-        "no-nested-ternary": "off"
+        "no-nested-ternary": "off",
+        "jsx-a11y/control-has-associated-label": "off"
     }
 }

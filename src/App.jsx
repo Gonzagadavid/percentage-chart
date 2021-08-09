@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import './App.css';
+import { DiNpm, DiGithubBadge } from 'react-icons/di';
 import CodePage from './pages/CodePage/CodePage';
 import Home from './pages/Home/Home';
 import SetPage from './pages/SetPage/SetPage';
@@ -10,6 +11,10 @@ function App() {
   return (
     <div className="App">
       <nav>
+        <div style={{ color: 'white', fontSize: '75px' }}>
+          <a href="https://github.com/Gonzagadavid/percentage-chart" target="_blank" rel="noreferrer"><DiGithubBadge /></a>
+          <a href="https://www.npmjs.com/package/stylized-percentage-chart" target="_blank" rel="noreferrer"><DiNpm /></a>
+        </div>
         <Link to="/percentage-chart">Início</Link>
         <Link to="/percentage-chart/settings">Estilizar Gráfico</Link>
         <Link to="/percentage-chart/code">Código do Estilo</Link>
