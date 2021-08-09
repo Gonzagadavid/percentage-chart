@@ -1,6 +1,6 @@
 {
-  "homepage": "http://gonzagadavid.github.io/stylized-percentage-chart",
-  "name": "stylized-percentage-chart",
+  "homepage": "http://gonzagadavid.github.io/percentage-chart",
+  "name": "percentage-chart",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
