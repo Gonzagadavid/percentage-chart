@@ -17,7 +17,7 @@ function App() {
       </nav>
       <main>
         <Switch>
-          <Route path="/percentage-chart" component={Home} />
+          <Route exact path="/percentage-chart" component={Home} />
           <Route path="/percentage-chart/settings/background" component={SetPage} />
           <Route path="/percentage-chart/code" component={CodePage} />
           <Route path="/percentage-chart/summary" component={SummaryPage} />

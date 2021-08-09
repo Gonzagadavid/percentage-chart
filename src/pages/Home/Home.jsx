@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Home.css';
 
 const Home = () => (
@@ -18,7 +17,6 @@ const Home = () => (
       <li>Na guia Legenda, poderá optar por usar legenda estilizada a seu gosto;</li>
       <p>Para visualizar as alterações clique em aplicar;</p>
     </ul>
-    <Link to="/percentage-chart/settings/background">Inicar</Link>
   </div>
 );
 
