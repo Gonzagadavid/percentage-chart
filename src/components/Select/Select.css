@@ -2,3 +2,10 @@
   display: block;
   margin: 20px;
 }
+
+.Select select {
+  background-color: rgb(34, 41, 51);
+  color: white;
+  border: none;
+  font-size: 15px;
+}

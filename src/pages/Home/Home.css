@@ -3,10 +3,13 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background:linear-gradient(rgb(0, 0, 0) , rgb(116, 118, 133));
+  min-height: 100vh;
+  color: white;
 }
 
 .Home h1, h2 {
-  margin: 40px;
+  margin: 10px;
 }
 
 .Home p {
@@ -22,10 +25,3 @@
   list-style:decimal;
 }
 
-.Home a {
-  color: black;
-}
-
-.Home a:visited {
-  color: black;
-}

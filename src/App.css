@@ -39,3 +39,13 @@
 .App a:visited {
   color: white;
 }
+
+.App button {
+  align-self: center;
+  background-color: green;
+  border: none;
+  margin: 5px;
+  padding: 10px;
+  font-size: 20px;
+  color: white
+}

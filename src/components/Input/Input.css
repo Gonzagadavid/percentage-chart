@@ -4,9 +4,13 @@
 }
 
 .Input input[type="number"] {
-  width: 30px;
+  width: 60px;
 }
 
 .Input input {
   margin: 5px;
+  background-color: rgb(34, 41, 51);
+  color: white;
+  border: none;
+  font-size: 15px;
 }
