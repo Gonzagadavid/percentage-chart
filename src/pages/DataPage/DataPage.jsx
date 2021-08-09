@@ -10,7 +10,7 @@ import './DataPage.css';
 const DataPage = () => (
   <div className="DataPage">
     <Switch>
-      <Route exact path="/" component={InputBackground} />
+      <Route exact path="/stylized-percentage-chart/" component={InputBackground} />
       <Route path="/stylized-percentage-chart/settings/insert-data" component={InputData} />
       <Route path="/stylized-percentage-chart/settings/edit-bar" component={EditBarContainer} />
       <Route path="/stylized-percentage-chart/settings/style-bar" component={InputBar} />
