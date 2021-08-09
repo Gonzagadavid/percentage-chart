@@ -9,7 +9,7 @@ class InputBar extends Component {
     this.state = {
       widthBar: '60',
       fontSizeBar: '15',
-      fontColorBlack: false,
+      fontColordifBar: false,
       fontColor: 'black',
       fontBar: 'monospace',
       topPercent: false,
@@ -35,7 +35,7 @@ class InputBar extends Component {
 
   render() {
     const {
-      widthBar, fontSizeBar, fontColorBlack, fontColor, topPercent, fontBar, baseName,
+      widthBar, fontSizeBar, fontColordifBar, fontColor, topPercent, fontBar, baseName,
     } = this.state;
     return (
       <fieldset>
@@ -65,11 +65,11 @@ class InputBar extends Component {
           type="checkbox"
           name="fontColorBlack"
           labelText="Cor da fonte diferente da barra:"
-          checked={fontColorBlack}
+          checked={fontColordifBar}
           change={this.handlerChange}
         />
         {
-         fontColorBlack
+         fontColordifBar
         && (
         <Input
           type="color"

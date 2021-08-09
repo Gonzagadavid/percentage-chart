@@ -1,5 +1,37 @@
 import React, { Component, createRef } from 'react';
 
+const INITIAL_STATE = {
+  data: {},
+  colors: [],
+  backgroundColor: 'white',
+  lineColor: 'black',
+  fontSizeBackground: '10',
+  widthGraph: '1000',
+  heightGraph: '500',
+  widthBorder: '1',
+  borderColor: 'black',
+  widthLine: '1',
+  fontBackground: 'monospace',
+  maxPercent: '100%',
+  percentSide: 'left',
+  widthBar: '60',
+  fontSizeBar: '15',
+  fontBar: 'monospace',
+  fontColordifBar: false,
+  fontColor: 'black',
+  topPercent: false,
+  baseName: true,
+  withLegend: false,
+  fontLegend: 'monospace',
+  fontLegendSize: '20',
+  fontColorLegend: 'black',
+  colorLegend: 'white',
+  borderLegend: 1,
+  colorBorderLegend: 'black',
+  legendSide: 'right',
+  legendVertical: 'atop',
+};
+
 class CanvasGraffic extends Component {
   constructor() {
     super();
@@ -28,9 +60,9 @@ class CanvasGraffic extends Component {
   drawbackgound() {
     const {
       style: {
-        widthGraph, heightGraph, lineColor, fontSizeBackground, widthLine,
-        fontBackground, percentSide,
-      }, maxPercent,
+        widthGraph = '1000', heightGraph = '500', lineColor = 'black', fontSizeBackground = '10', widthLine = '1',
+        fontBackground = 'monospace', percentSide = 'left',
+      } = INITIAL_STATE, maxPercent = '100%',
     } = this.props;
     const sidePercent = percentSide === 'right' ? widthGraph - (fontSizeBackground * 4) : 10;
     const percent = maxPercent === '70%' ? 8 : maxPercent === '50%' ? 6 : 11;
@@ -59,9 +91,9 @@ class CanvasGraffic extends Component {
   drawBars() {
     const {
       style: {
-        widthBar, widthGraph, heightGraph, fontSizeBar, fontBar, maxPercent,
-        fontColorBlack, fontColor, topPercent, withLegend, baseName,
-      }, data, colors,
+        widthBar = '60', widthGraph = '1000', heightGraph = '500', fontSizeBar = '15', fontBar = 'monospace', maxPercent = '100%',
+        fontColordifBar = false, fontColor = 'black', topPercent = false, withLegend = false, baseName = true,
+      } = INITIAL_STATE, data = {}, colors = [],
     } = this.props;
     const canvas = this.canvasRef.current;
     const fontSize = +fontSizeBar || 20;
@@ -82,7 +114,7 @@ class CanvasGraffic extends Component {
       const cents = ((+data[name] * (10 * largeCent)) / total);
       context.fillStyle = colors[i] || '#aaa';
       context.fillRect(x, initBar, +widthBar, -cents);
-      if (fontColorBlack) context.fillStyle = fontColor || 'black';
+      if (fontColordifBar) context.fillStyle = fontColor || 'black';
       if (baseName) context.fillText(name, x + (widthBar / 8), initBar + fontSize);
       if (topPercent) {
         context.fillText(percents, x + (widthBar / 4), initBar - cents - (fontSizeBar / 2));
@@ -95,9 +127,10 @@ class CanvasGraffic extends Component {
   legendCreate() {
     const {
       style: {
-        fontLegendSize, borderLegend, colorBorderLegend, colorLegend, fontLegend,
-        widthGraph, fontColorLegend, legendSide, legendVertical, heightGraph,
-      }, data, colors,
+        fontLegendSize = '20', borderLegend = '1', colorBorderLegend = 'black', colorLegend = 'white',
+        fontLegend = 'monospace', widthGraph = '1000', fontColorLegend = 'black', legendSide = 'right',
+        legendVertical = 'atop', heightGraph = '500',
+      } = INITIAL_STATE, data = {}, colors = [],
     } = this.props;
     const canvas = this.canvasRef.current;
     const context = canvas.getContext('2d');
@@ -136,8 +169,8 @@ class CanvasGraffic extends Component {
   render() {
     const {
       style: {
-        widthGraph, heightGraph, backgroundColor, widthBorder, borderColor,
-      },
+        widthGraph = '1000', heightGraph = '500', backgroundColor = 'white', widthBorder = 1, borderColor = 'black',
+      } = INITIAL_STATE,
     } = this.props;
     return (
       <canvas
