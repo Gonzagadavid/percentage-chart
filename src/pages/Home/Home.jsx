@@ -18,7 +18,7 @@ const Home = () => (
       <li>Na guia Legenda, poderá optar por usar legenda estilizada a seu gosto;</li>
       <p>Para visualizar as alterações clique em aplicar;</p>
     </ul>
-    <Link to="/settings">Inicar</Link>
+    <Link to="/percentage-chart/settings/background">Inicar</Link>
   </div>
 );
 
