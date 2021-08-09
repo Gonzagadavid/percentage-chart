@@ -10,17 +10,17 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <Link to="/">Início</Link>
-        <Link to="/settings">Estilizar Gráfico</Link>
-        <Link to="/code">Código do Estilo</Link>
-        <Link to="/summary">Sumário</Link>
+        <Link to="/stylized-percentage-chart">Início</Link>
+        <Link to="/stylized-percentage-chart/settings">Estilizar Gráfico</Link>
+        <Link to="/stylized-percentage-chart/code">Código do Estilo</Link>
+        <Link to="/stylized-percentage-chart/summary">Sumário</Link>
       </nav>
       <main>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/settings" component={SetPage} />
-          <Route path="/code" component={CodePage} />
-          <Route path="/summary" component={SummaryPage} />
+          <Route exact path="/stylized-percentage-chart" component={Home} />
+          <Route path="/stylized-percentage-chart/settings" component={SetPage} />
+          <Route path="/stylized-percentage-chart/code" component={CodePage} />
+          <Route path="/stylized-percentage-chart/summary" component={SummaryPage} />
         </Switch>
       </main>
     </div>

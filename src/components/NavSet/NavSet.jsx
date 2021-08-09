@@ -5,11 +5,11 @@ import './NavSet.css';
 const NavSet = () => (
   <nav className="NavSet">
     <ul>
-      <li><Link to="/settings/">Estilo Background</Link></li>
-      <li><Link to="/settings/insert-data">Inserir Dados</Link></li>
-      <li><Link to="/settings/edit-bar">Editar Barras</Link></li>
-      <li><Link to="/settings/style-bar">Estilizar Barras</Link></li>
-      <li><Link to="/settings/legend">Legenda</Link></li>
+      <li><Link to="/stylized-percentage-chart/settings/">Estilo Background</Link></li>
+      <li><Link to="/stylized-percentage-chart/settings/insert-data">Inserir Dados</Link></li>
+      <li><Link to="/stylized-percentage-chart/settings/edit-bar">Editar Barras</Link></li>
+      <li><Link to="/stylized-percentage-chart/settings/style-bar">Estilizar Barras</Link></li>
+      <li><Link to="/stylized-percentage-chart/settings/legend">Legenda</Link></li>
     </ul>
     <Link to="/code"><button type="button">Concluir</button></Link>
   </nav>

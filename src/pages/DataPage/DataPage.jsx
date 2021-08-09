@@ -10,11 +10,11 @@ import './DataPage.css';
 const DataPage = () => (
   <div className="DataPage">
     <Switch>
-      <Route exact path="/settings/" component={InputBackground} />
-      <Route path="/settings/insert-data" component={InputData} />
-      <Route path="/settings/edit-bar" component={EditBarContainer} />
-      <Route path="/settings/style-bar" component={InputBar} />
-      <Route path="/settings/legend" component={Legend} />
+      <Route exact path="/stylized-percentage-chart/settings/" component={InputBackground} />
+      <Route path="/stylized-percentage-chart/settings/insert-data" component={InputData} />
+      <Route path="/stylized-percentage-chart/settings/edit-bar" component={EditBarContainer} />
+      <Route path="/stylized-percentage-chart/settings/style-bar" component={InputBar} />
+      <Route path="/stylized-percentage-chart/settings/legend" component={Legend} />
     </Switch>
   </div>
 );
