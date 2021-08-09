@@ -8,10 +8,12 @@ const CodePage = ({
   widthLine, fontBackground, percentSide, widthBar, fontSizeBar,
   fontColorBlack, fontColor, topPercent, withLegend, fontLegend, fontLegendSize, colorLegend,
   borderLegend, colorBorderLegend, fontColorLegend, baseName, legendSide, legendVertical,
-  widthBorder, borderColor,
+  widthBorder, borderColor, data, maxPercent, colors,
 }) => {
   const objectCode = useRef(null);
   const npm = useRef(null);
+  const importComp = useRef(null);
+  const objData = Object.entries(data).map((arr) => arr.join(': ')).join(', ');
 
   const copyToClip = (ref) => {
     const tempInput = document.createElement('textarea');
@@ -32,7 +34,8 @@ const CodePage = ({
         <Highlight className="language-javascript">
           <p ref={objectCode}>
             {
-            `//style.js
+            `
+//style.js
             
 const style = { 
   widthGraph: '${widthGraph}',
@@ -74,7 +77,38 @@ export default style
         <button type="button" className="copy-button" onClick={() => copyToClip(npm)}>Copy</button>
         <Highlight className="language-shell">
           <p ref={npm}>
-            npm install
+            npm i stylized-percentage-chart
+          </p>
+        </Highlight>
+      </div>
+      <p>
+        Importe o componete stylized-percentage-chart  e passe os dados do estilo e os dados a ser
+        renderizado como props
+      </p>
+      <div className="code">
+        <button type="button" className="copy-button" onClick={() => copyToClip(importComp)}>Copy</button>
+        <Highlight className="language-javascript">
+          <p ref={importComp}>
+            {
+              `
+import React from 'react';
+import { PercentChart } from 'stylized-percentage-chart';
+import style from ./path/style
+
+const GraphicPage = () => (
+  <div className="graphic">
+    <PercentChart
+      style={style}
+      data={{${objData}}}
+      maxPercent={${maxPercent}}
+      colors={[${colors}]}
+    />
+  </div>
+)
+
+export default GraphicPage;
+`
+            }
           </p>
         </Highlight>
       </div>

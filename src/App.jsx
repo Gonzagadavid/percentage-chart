@@ -11,14 +11,14 @@ function App() {
     <div className="App">
       <nav>
         <Link to="/percentage-chart">Início</Link>
-        <Link to="/percentage-chart/settings/background">Estilizar Gráfico</Link>
+        <Link to="/percentage-chart/settings">Estilizar Gráfico</Link>
         <Link to="/percentage-chart/code">Código do Estilo</Link>
         <Link to="/percentage-chart/summary">Sumário</Link>
       </nav>
       <main>
         <Switch>
           <Route exact path="/percentage-chart" component={Home} />
-          <Route path="/percentage-chart/settings/background" component={SetPage} />
+          <Route path="/percentage-chart/settings" component={SetPage} />
           <Route path="/percentage-chart/code" component={CodePage} />
           <Route path="/percentage-chart/summary" component={SummaryPage} />
         </Switch>
