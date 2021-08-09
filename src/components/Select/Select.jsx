@@ -1,5 +1,6 @@
 import { func, string, arrayOf } from 'prop-types';
 import React from 'react';
+import './Select.css';
 
 const Select = (props) => {
   const {
@@ -7,7 +8,7 @@ const Select = (props) => {
   } = props;
 
   return (
-    <label htmlFor={name}>
+    <label htmlFor={name} className="Select">
       {labelText}
       <select
         id={name}

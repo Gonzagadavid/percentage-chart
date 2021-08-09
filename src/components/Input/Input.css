@@ -1,0 +1,12 @@
+.Input {
+  display: block;
+  margin-left: 20px;
+}
+
+.Input input[type="number"] {
+  width: 30px;
+}
+
+.Input input {
+  margin: 5px;
+}

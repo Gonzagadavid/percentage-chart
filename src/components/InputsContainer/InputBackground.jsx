@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { actionAddBackground } from '../redux/actions';
-import Input from './Input/Input';
-import Select from './Select/Select';
+import { actionAddBackground } from '../../redux/actions';
+import Input from '../Input/Input';
+import Select from '../Select/Select';
+import './InputContainer.css';
 
 class InputBackground extends Component {
   constructor() {
@@ -40,8 +41,8 @@ class InputBackground extends Component {
       widthLine, fontBackground, maxPercent, widthBorder, borderColor,
     } = this.state;
     return (
-      <fieldset>
-        <legend>Estilo Background</legend>
+      <div className="InputConatiner">
+        <h3>Estilo Background</h3>
         <Input type="color" name="backgroundColor" labelText="Cor de fundo:" value={backgroundColor} change={this.handlerChange} />
         <Input type="color" name="lineColor" labelText="Cor da linha:" value={lineColor} change={this.handlerChange} />
         <Input type="number" name="widthLine" labelText="Largura da linha:" value={widthLine} change={this.handlerChange} />
@@ -61,7 +62,7 @@ class InputBackground extends Component {
           options={['100%', '70%', '50%']}
         />
         <button type="button" onClick={this.insertBackground}>Aplicar</button>
-      </fieldset>
+      </div>
     );
   }
 }

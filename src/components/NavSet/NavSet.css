@@ -1,11 +1,17 @@
-.NavSet {
+.App .NavSet {
   display: flex;
-  background-color: black;
+  background-color:rgb(0,0,0) ;
   justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  width: 80vw; 
+  height: 40px;
 }
 
+
 .NavSet ul {
-  display: flex;  
+  display: flex;
+  align-items: center;  
 }
 
 .NavSet li {

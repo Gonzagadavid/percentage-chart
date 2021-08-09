@@ -2,6 +2,7 @@ import {
   bool,
   func, string, number, oneOfType,
 } from 'prop-types';
+import './Input.css';
 
 import React from 'react';
 
@@ -11,8 +12,8 @@ const Input = (props) => {
   } = props;
 
   return (
-    <label htmlFor={name}>
-      {type !== 'radio' ? labelText : ''}
+    <label htmlFor={name} className="Input">
+      {type !== 'radio' && type !== 'checkbox' ? labelText : ''}
       <input
         type={type}
         id={name}
@@ -21,7 +22,7 @@ const Input = (props) => {
         onChange={change}
         name={name}
       />
-      {type === 'radio' ? labelText : ''}
+      {type === 'radio' || type === 'checkbox' ? labelText : ''}
     </label>
   );
 };

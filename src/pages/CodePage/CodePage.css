@@ -1,13 +1,30 @@
+.CodePage {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  text-align: center;
+  height: 100%;
+}
+
+.CodePage h2{
+  margin: 0;
+  text-align: center;
+  padding: 20px;
+}
+
 .copy-button {
-  display: inline-block ;
-  position: absolute;
-  right: 0;
-  top: 0;
-  text-align: end;
-  background-color: blue;
+  display: block;
+  position: relative;
 }
 
 .language-javascript {
-  position: absolute;
+  text-align: start;
+}
+
+.code {
   width: 80%;
+  margin: 40px;
+  display: block;
+  text-align: start;
+  font-size: 15px;
 }

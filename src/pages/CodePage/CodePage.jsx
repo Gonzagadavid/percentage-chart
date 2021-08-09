@@ -11,6 +11,7 @@ const CodePage = ({
   widthBorder, borderColor,
 }) => {
   const objectCode = useRef(null);
+  const npm = useRef(null);
 
   const copyToClip = (ref) => {
     const tempInput = document.createElement('textarea');
@@ -26,12 +27,13 @@ const CodePage = ({
     <div className="CodePage">
       <h2>Finalizando</h2>
       <p>Crie um arquivo, copie e cole o objeto com os dados da estilização, depois o exporte</p>
-      <button type="button" className="copy-button" onClick={() => copyToClip(objectCode)}>Copy</button>
-      <Highlight className="language-javascript">
-        <p ref={objectCode}>
-          {
-`//style.js
-
+      <div className="code">
+        <button type="button" className="copy-button" onClick={() => copyToClip(objectCode)}>Copy</button>
+        <Highlight className="language-javascript">
+          <p ref={objectCode}>
+            {
+            `//style.js
+            
 const style = { 
   widthGraph: '${widthGraph}',
   widthBorder: '${widthBorder}',
@@ -63,9 +65,19 @@ const style = {
 
 export default style
 `
-      }
-        </p>
-      </Highlight>
+}
+          </p>
+        </Highlight>
+      </div>
+      <p>Instale o componente libary em sua aplicação</p>
+      <div className="code">
+        <button type="button" className="copy-button" onClick={() => copyToClip(npm)}>Copy</button>
+        <Highlight className="language-shell">
+          <p ref={npm}>
+            npm install
+          </p>
+        </Highlight>
+      </div>
     </div>
     )
   );

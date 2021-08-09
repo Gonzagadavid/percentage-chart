@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { actionAddColor, actionAddData } from '../redux/actions';
-import Input from './Input/Input';
+import { actionAddColor, actionAddData } from '../../redux/actions';
+import Input from '../Input/Input';
+import './InputContainer.css';
 
 class InputData extends Component {
   constructor() {
@@ -31,13 +32,13 @@ class InputData extends Component {
   render() {
     const { dataName, qty, color } = this.state;
     return (
-      <fieldset>
-        <legend>Inserir Dados</legend>
+      <div className="InputConatiner">
+        <h3>Inserir Dados</h3>
         <Input type="text" name="dataName" labelText="Nome:" value={dataName} change={this.handlerChange} />
         <Input type="number" name="qty" labelText="Quantidade:" value={qty} change={this.handlerChange} />
         <Input type="color" name="color" value={color} labelText="Cor:" change={this.handlerChange} />
         <button type="button" onClick={this.insertData}>Inserir Dado</button>
-      </fieldset>
+      </div>
     );
   }
 }

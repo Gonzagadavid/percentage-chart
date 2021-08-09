@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { actionEditColor, actionEditQty, actionRemoveData } from '../redux/actions';
-import EditBar from './EditBar/EditBar';
+import { actionEditColor, actionEditQty, actionRemoveData } from '../../redux/actions';
+import EditBar from '../EditBar/EditBar';
+import './InputContainer.css';
 
 const EditBarContainer = ({
   data, colors, removeData, editColor, editQty,
 }) => {
   const names = Object.keys(data);
   return (
-    <fieldset>
-      <legend>Editar Barras</legend>
+    <div className="InputConatiner">
+      <h3>Editar Barras</h3>
       {names.map((name, index) => (
         <EditBar
           text={name}
@@ -21,7 +22,7 @@ const EditBarContainer = ({
           changeQty={({ target: { value } }) => editQty({ name, qty: value })}
         />
       ))}
-    </fieldset>
+    </div>
   );
 };
 

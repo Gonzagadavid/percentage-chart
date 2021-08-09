@@ -1,0 +1,13 @@
+.Summary {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.Summary h2, h3  {
+  text-align: center;
+}
+
+.item {
+  margin: 20px;
+}

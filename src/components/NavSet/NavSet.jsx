@@ -5,7 +5,7 @@ import './NavSet.css';
 const NavSet = () => (
   <nav className="NavSet">
     <ul>
-      <li><Link to="/settings/background">Background</Link></li>
+      <li><Link to="/settings/">Estilo Background</Link></li>
       <li><Link to="/settings/insert-data">Inserir Dados</Link></li>
       <li><Link to="/settings/edit-bar">Editar Barras</Link></li>
       <li><Link to="/settings/style-bar">Estilizar Barras</Link></li>

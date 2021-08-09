@@ -1,0 +1,14 @@
+.InputConatiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.InputConatiner h3 {
+  text-align: center;
+}
+
+.InputConatiner button {
+  width: 50%;
+  align-self: center;
+}

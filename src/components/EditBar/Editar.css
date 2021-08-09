@@ -1,0 +1,21 @@
+.EditBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 20px;
+  padding: 10px;
+  border: solid black 1px;
+}
+
+.EditBar input[type="number"] {
+  width: 30px;
+  margin: 5px;
+}
+
+.EditBar button[type="button"] {
+  width: 80px;
+}
+
+.EditBar h3 {
+  text-align: center;
+}

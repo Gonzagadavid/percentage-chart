@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { actionAddStyleBar } from '../redux/actions';
-import Input from './Input/Input';
+import { actionAddStyleBar } from '../../redux/actions';
+import Input from '../Input/Input';
+import './InputContainer.css';
 
 class InputBar extends Component {
   constructor() {
@@ -38,8 +39,8 @@ class InputBar extends Component {
       widthBar, fontSizeBar, fontColordifBar, fontColor, topPercent, fontBar, baseName,
     } = this.state;
     return (
-      <fieldset>
-        <legend>Estilo das Barras</legend>
+      <div className="InputConatiner">
+        <h3>Estilo das Barras</h3>
         <Input
           type="number"
           name="widthBar"
@@ -95,7 +96,7 @@ class InputBar extends Component {
           change={this.handlerChange}
         />
         <button type="button" onClick={this.insertStyleBar}>Aplicar</button>
-      </fieldset>
+      </div>
     );
   }
 }

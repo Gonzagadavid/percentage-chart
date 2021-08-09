@@ -1,21 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import CanvasGraffic from '../components/CanvasGraffic';
+import CanvasGraffic from '../../components/CanvasGraffic';
+import NavSet from '../../components/NavSet/NavSet';
 
-const GrafficPage = (props) => {
+import './GraphicPage.css';
+
+const GraphicPage = (props) => {
   const {
     data, colors, maxPercent, style,
   } = props;
 
   return (
-    <div className="content">
-      <h2>Grafico com barras</h2>
-      <CanvasGraffic
-        style={style}
-        data={data}
-        maxPercent={maxPercent}
-        colors={colors}
-      />
+    <div className="GraphicPage">
+      <NavSet />
+      <div className="graphic">
+        <CanvasGraffic
+          style={style}
+          data={data}
+          maxPercent={maxPercent}
+          colors={colors}
+        />
+      </div>
     </div>
   );
 };
@@ -52,4 +57,4 @@ const mapStateToProps = (state) => ({
   legendVertical: state.legendVertical,
   borderColor: state.borderColor,
 });
-export default connect(mapStateToProps)(GrafficPage);
+export default connect(mapStateToProps)(GraphicPage);

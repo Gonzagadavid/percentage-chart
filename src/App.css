@@ -2,10 +2,40 @@
   margin: 0;
 }
 
-/* .App {
-  text-align: center;
+.App {
+  font-size: 20px;
 }
 
-a:visited {
-  color:chartreuse
-} */
+
+.App nav{
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  justify-content: space-around;
+  width: 100%; 
+  min-height: 10vh;
+  align-items: center;
+}
+
+.App main {
+  width: 100%;
+  min-height: 90vh;
+  background-color: #ccc;
+} 
+.App ul {
+  display: flex; 
+  height: 10%; 
+}
+
+.App li {
+  list-style: none;
+  padding: 15px 20px;
+}
+
+.App a {
+  color: white;
+  text-decoration: none;
+}
+
+.App a:visited {
+  color: white;
+}

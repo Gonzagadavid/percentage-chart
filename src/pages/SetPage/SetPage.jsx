@@ -1,12 +1,13 @@
 import React from 'react';
-import DataPage from '../DataPage';
-import GrafficPage from '../GrafficPage';
+import DataPage from '../DataPage/DataPage';
+import GraphicPage from '../GraphicPage/GraphicPage';
+import './SetPage.css';
 
 function SetPage() {
   return (
     <div className="SetPage">
       <DataPage />
-      <GrafficPage />
+      <GraphicPage />
     </div>
   );
 }
