@@ -11,7 +11,7 @@ const NavSet = () => (
       <li><Link to="/percentage-chart/settings/style-bar">Estilizar Barras</Link></li>
       <li><Link to="/percentage-chart/settings/legend">Legenda</Link></li>
     </ul>
-    <Link to="/code"><button type="button">Concluir</button></Link>
+    <Link to="/percentage-chart/code"><button type="button">Concluir</button></Link>
   </nav>
 );
 
