@@ -19,7 +19,7 @@ const CodePage = ({
 
   const copyToClip = (ref) => {
     const tempInput = document.createElement('textarea');
-    tempInput.value = ref.current.innerHTML;
+    tempInput.value = ref.current.innerText;
     document.body.appendChild(tempInput);
     tempInput.select();
     document.execCommand('copy');
