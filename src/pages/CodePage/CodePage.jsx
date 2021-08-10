@@ -1,7 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import './CodePage.css';
 import Highlight from 'react-highlight';
+import { GiConfirmed } from 'react-icons/gi';
+import { FaRegCopy } from 'react-icons/fa';
 
 const CodePage = ({
   heightGraph, widthGraph, backgroundColor, lineColor, fontBar, fontSizeBackground,
@@ -17,6 +19,7 @@ const CodePage = ({
     .entries(data)
     .reduce((str, arr, i) => `${str}${i !== 0 ? ',' : ''} ${arr[0]}: ${arr[1]}`, '')} `;
 
+  const [copied, setCopied] = useState(false);
   const copyToClip = (ref) => {
     const tempInput = document.createElement('textarea');
     tempInput.value = ref.current.innerText;
@@ -24,15 +27,25 @@ const CodePage = ({
     tempInput.select();
     document.execCommand('copy');
     document.body.removeChild(tempInput);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 3000);
   };
 
   return (document.queryCommandSupported('copy')
     && (
     <div className="CodePage">
+      {copied ? (
+        <p className="copied">
+          <GiConfirmed />
+          <span>Copied to clipboard!</span>
+        </p>
+      ) : ''}
       <h2>Finalizando</h2>
       <p>Crie um arquivo, copie e cole o objeto com os dados da estilização, depois o exporte</p>
       <div className="code">
-        <button type="button" className="copy-button" onClick={() => copyToClip(objectCode)}>Copy</button>
+        <button type="button" className="copy-button" onClick={() => copyToClip(objectCode)}>
+          <FaRegCopy />
+        </button>
         <Highlight className="language-javascript">
           <p ref={objectCode}>
             {
@@ -76,7 +89,9 @@ export default style
       </div>
       <p>Instale o componente libary em sua aplicação</p>
       <div className="code">
-        <button type="button" className="copy-button" onClick={() => copyToClip(npm)}>Copy</button>
+        <button type="button" className="copy-button" onClick={() => copyToClip(npm)}>
+          <FaRegCopy />
+        </button>
         <Highlight className="language-shell">
           <p ref={npm}>
             npm i stylized-percentage-chart
@@ -88,7 +103,9 @@ export default style
         renderizado como props
       </p>
       <div className="code">
-        <button type="button" className="copy-button" onClick={() => copyToClip(importComp)}>Copy</button>
+        <button type="button" className="copy-button" onClick={() => copyToClip(importComp)}>
+          <FaRegCopy />
+        </button>
         <Highlight className="language-javascript">
           <p ref={importComp}>
             {

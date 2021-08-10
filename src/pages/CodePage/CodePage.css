@@ -14,13 +14,19 @@
   padding: 20px;
 }
 
-.copy-button {
+.App .copy-button {
   display: block;
   position: relative;
+  margin: 0;
+  font-size: 15px;
+  padding: 5px 10px;
+  background-color: rgb(115, 165, 189);
+  color: rgb(11, 4, 112);
 }
 
 .language-javascript {
   text-align: start;
+  line-height: 1.7;
 }
 
 .code {
@@ -29,4 +35,16 @@
   display: block;
   text-align: start;
   font-size: 15px;
+}
+
+.copied {
+  background-color: rgba(108, 184, 255, 0.8);
+  color: rgb(11, 4, 112);
+  position: fixed;
+  top: 0;
+  padding: 20px;
+}
+
+.copied span{
+  margin: 5px;
 }
