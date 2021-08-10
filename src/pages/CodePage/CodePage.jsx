@@ -13,7 +13,9 @@ const CodePage = ({
   const objectCode = useRef(null);
   const npm = useRef(null);
   const importComp = useRef(null);
-  const objData = Object.entries(data).map((arr) => arr.join(': ')).join(', ');
+  const objData = `${Object
+    .entries(data)
+    .reduce((str, arr, i) => `${str}${i !== 0 ? ',' : ''} ${arr[0]}: ${arr[1]}`, '')} `;
 
   const copyToClip = (ref) => {
     const tempInput = document.createElement('textarea');
@@ -100,8 +102,8 @@ const GraphicPage = () => (
     <PercentChart
       style={style}
       data={{${objData}}}
-      maxPercent={${maxPercent}}
-      colors={[${colors}]}
+      maxPercent={'${maxPercent}'}
+      colors={[${colors.map((color) => `'${color}'`)}]}
     />
   </div>
 )
