@@ -9,7 +9,6 @@ const GraphicPage = (props) => {
   const {
     data, colors, maxPercent, style,
   } = props;
-
   return (
     <div className="GraphicPage">
       <NavSet />

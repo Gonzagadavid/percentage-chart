@@ -3,13 +3,13 @@
 }
 
 
-html, body {
-  width: 100%;
-  background-color  : #ccc; 
+/* html, body {
 
-}
+} */
 
 body {
+  min-width: 100vw;
+  background-color : #ccc; 
   display: flex;
   flex-direction: column;
 }

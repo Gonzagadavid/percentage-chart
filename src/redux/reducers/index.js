@@ -43,6 +43,7 @@ const reducerData = (state = INITIAL_STATE, action) => {
       return { ...state, colors: [...state.colors, action.state] };
 
     case ADD_BACKGROUND:
+      document.body.style.width = `${+action.state.widthGraph + 500}px`;
       return { ...state, ...action.state };
 
     case ADD_STYLEBAR:

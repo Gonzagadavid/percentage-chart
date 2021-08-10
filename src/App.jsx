@@ -10,7 +10,7 @@ import SummaryPage from './pages/SummaryPage.jsx/SummaryPage';
 function App() {
   return (
     <div className="App">
-      <nav>
+      <nav id="nav-app">
         <div style={{ color: 'white', fontSize: '75px' }}>
           <a href="https://github.com/Gonzagadavid/percentage-chart" target="_blank" rel="noreferrer"><DiGithubBadge /></a>
           <a href="https://www.npmjs.com/package/stylized-percentage-chart" target="_blank" rel="noreferrer"><DiNpm /></a>
