@@ -6,6 +6,7 @@
   height: 100%;
   background:linear-gradient(rgb(0, 0, 0) , rgb(116, 118, 133));
   color: white;
+  width: 100%;
 }
 
 .CodePage h2{

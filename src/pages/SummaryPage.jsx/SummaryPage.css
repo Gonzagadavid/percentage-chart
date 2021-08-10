@@ -4,6 +4,7 @@
   font-size: 20px;
   background:linear-gradient(rgb(0, 0, 0) , rgb(116, 118, 133));
   color: white;
+  width: 100%;
 }
 
 .Summary h2, h3  {

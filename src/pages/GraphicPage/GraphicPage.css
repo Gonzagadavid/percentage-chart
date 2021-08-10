@@ -1,3 +1,12 @@
 .graphic {
-  margin: 15px 0 0 15px;
+  margin: 15px 0 0 15px;  
+  width: 90%;
+  padding: 10px;  
+}
+
+.GraphicPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
