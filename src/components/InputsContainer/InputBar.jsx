@@ -17,21 +17,17 @@ class InputBar extends Component {
       baseName: true,
     };
     this.handlerChange = this.handlerChange.bind(this);
-    this.insertStyleBar = this.insertStyleBar.bind(this);
   }
 
   handlerChange({ target }) {
     const {
       name, value, checked, type,
     } = target;
+    const { addStyleBar } = this.props;
     const checkbox = type === 'checkbox';
     const valueInput = checkbox ? checked : value;
     this.setState({ [name]: valueInput });
-  }
-
-  insertStyleBar() {
-    const { addStyleBar } = this.props;
-    addStyleBar({ ...this.state });
+    addStyleBar({ [name]: valueInput });
   }
 
   render() {
@@ -95,7 +91,6 @@ class InputBar extends Component {
           checked={baseName}
           change={this.handlerChange}
         />
-        <button type="button" onClick={this.insertStyleBar}>Aplicar</button>
       </div>
     );
   }

@@ -87,7 +87,10 @@ export default style
           </p>
         </Highlight>
       </div>
-      <p>Instale o componente libary em sua aplicação</p>
+      <p>
+        Instale o componente libary em sua aplicação
+        (caso ocorra conflitos de versões, use o --force, isso não aterará sua aplicação)
+      </p>
       <div className="code">
         <button type="button" className="copy-button" onClick={() => copyToClip(npm)}>
           <FaRegCopy />

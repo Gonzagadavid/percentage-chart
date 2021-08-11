@@ -22,17 +22,13 @@ class InputBackground extends Component {
       borderColor: 'black',
     };
     this.handlerChange = this.handlerChange.bind(this);
-    this.insertBackground = this.insertBackground.bind(this);
   }
 
   handlerChange({ target }) {
     const { name, value } = target;
     this.setState({ [name]: value });
-  }
-
-  insertBackground() {
     const { addBackground } = this.props;
-    addBackground({ ...this.state });
+    addBackground({ [name]: value });
   }
 
   render() {

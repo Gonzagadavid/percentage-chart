@@ -20,6 +20,7 @@
     "rules": {
         "react/prop-types": "off",
         "no-nested-ternary": "off",
-        "jsx-a11y/control-has-associated-label": "off"
+        "jsx-a11y/control-has-associated-label": "off",
+        "react/no-unused-state": "off"
     }
 }
