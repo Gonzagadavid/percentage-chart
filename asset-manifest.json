@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/percentage-chart/static/css/main.48035cd5.chunk.css",
-    "main.js": "/percentage-chart/static/js/main.d699bcbc.chunk.js",
-    "main.js.map": "/percentage-chart/static/js/main.d699bcbc.chunk.js.map",
+    "main.js": "/percentage-chart/static/js/main.a153bd7e.chunk.js",
+    "main.js.map": "/percentage-chart/static/js/main.a153bd7e.chunk.js.map",
     "runtime-main.js": "/percentage-chart/static/js/runtime-main.69b38dd4.js",
     "runtime-main.js.map": "/percentage-chart/static/js/runtime-main.69b38dd4.js.map",
-    "static/js/2.ef0327c9.chunk.js": "/percentage-chart/static/js/2.ef0327c9.chunk.js",
-    "static/js/2.ef0327c9.chunk.js.map": "/percentage-chart/static/js/2.ef0327c9.chunk.js.map",
+    "static/js/2.9b76f226.chunk.js": "/percentage-chart/static/js/2.9b76f226.chunk.js",
+    "static/js/2.9b76f226.chunk.js.map": "/percentage-chart/static/js/2.9b76f226.chunk.js.map",
     "index.html": "/percentage-chart/index.html",
     "static/css/main.48035cd5.chunk.css.map": "/percentage-chart/static/css/main.48035cd5.chunk.css.map",
-    "static/js/2.ef0327c9.chunk.js.LICENSE.txt": "/percentage-chart/static/js/2.ef0327c9.chunk.js.LICENSE.txt"
+    "static/js/2.9b76f226.chunk.js.LICENSE.txt": "/percentage-chart/static/js/2.9b76f226.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.69b38dd4.js",
-    "static/js/2.ef0327c9.chunk.js",
+    "static/js/2.9b76f226.chunk.js",
     "static/css/main.48035cd5.chunk.css",
-    "static/js/main.d699bcbc.chunk.js"
+    "static/js/main.a153bd7e.chunk.js"
   ]
 }
