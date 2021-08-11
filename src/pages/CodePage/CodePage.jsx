@@ -94,7 +94,7 @@ export default style
         </button>
         <Highlight className="language-shell">
           <p ref={npm}>
-            npm i stylized-percentage-chart
+            npm i stylized-graphic-component
           </p>
         </Highlight>
       </div>
@@ -111,12 +111,12 @@ export default style
             {
               `
 import React from 'react';
-import { PercentChart } from 'stylized-percentage-chart';
+import { GraphicComponent } from 'stylized-graphic-component'
 import style from ./path/style
 
 const GraphicPage = () => (
   <div className="graphic">
-    <PercentChart
+  <GraphicComponent
       style={style}
       data={{${objData}}}
       maxPercent={'${maxPercent}'}

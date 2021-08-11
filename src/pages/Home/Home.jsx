@@ -3,7 +3,7 @@ import './Home.css';
 
 const Home = () => (
   <div className="Home">
-    <h1>Stylized percentage chart</h1>
+    <h1>Stylized Graphic Component</h1>
     <p>
       Essa página tem como finalidade auxiliar na estilização do componente
       libary stylized-percentage-chart
@@ -15,7 +15,6 @@ const Home = () => (
       <li>Na guia Editar Barras, poderá alterar e excluir os dados e trocar a cor das barras;</li>
       <li>Na guia Estilizar Barras, configure detalhes nos estilo das barras;</li>
       <li>Na guia Legenda, poderá optar por usar legenda estilizada a seu gosto;</li>
-      <p>Para visualizar as alterações clique em aplicar;</p>
     </ul>
   </div>
 );

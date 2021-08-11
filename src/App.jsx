@@ -13,7 +13,7 @@ function App() {
       <nav id="nav-app">
         <div style={{ color: 'white', fontSize: '75px' }}>
           <a href="https://github.com/Gonzagadavid/percentage-chart" target="_blank" rel="noreferrer"><DiGithubBadge /></a>
-          <a href="https://www.npmjs.com/package/stylized-percentage-chart" target="_blank" rel="noreferrer"><DiNpm /></a>
+          <a href="https://www.npmjs.com/package/stylized-graphic-component" target="_blank" rel="noreferrer"><DiNpm /></a>
         </div>
         <Link to="/percentage-chart">Início</Link>
         <Link to="/percentage-chart/settings">Estilizar Gráfico</Link>
