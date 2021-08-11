@@ -57,7 +57,6 @@ class InputBackground extends Component {
           change={this.handlerChange}
           options={['100%', '70%', '50%']}
         />
-        <button type="button" onClick={this.insertBackground}>Aplicar</button>
       </div>
     );
   }
