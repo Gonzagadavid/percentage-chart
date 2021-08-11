@@ -19,6 +19,7 @@ class Legend extends Component {
       legendVertical: 'atop',
     };
     this.handlerChange = this.handlerChange.bind(this);
+    this.insertLegend = this.insertLegend.bind(this);
   }
 
   handlerChange({ target }) {
@@ -28,9 +29,13 @@ class Legend extends Component {
     const checkbox = type === 'checkbox';
     const valueInput = checkbox ? checked : value;
     this.setState({ [name]: valueInput }, () => {
-      const { addLegend } = this.props;
-      if (name === 'withLegend') addLegend({ ...this.state });
+      if (name === 'withLegend') this.insertLegend();
     });
+  }
+
+  insertLegend() {
+    const { addLegend } = this.props;
+    addLegend({ ...this.state });
   }
 
   render() {
@@ -61,6 +66,7 @@ class Legend extends Component {
             <Input type="radio" name="legendSide" labelText="Direito" value="right" change={this.handlerChange} />
             <Input type="radio" name="legendVertical" labelText="Superior" value="atop" change={this.handlerChange} />
             <Input type="radio" name="legendVertical" labelText="Inferior" value="bottom" change={this.handlerChange} />
+            <button type="button" onClick={this.insertLegend}>Aplicar</button>
           </>
         )}
       </div>
