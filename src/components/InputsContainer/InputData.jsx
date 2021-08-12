@@ -1,47 +1,46 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+
 import { connect } from 'react-redux';
+import { inputData } from '../../data/inputs';
 import { actionAddColor, actionAddData } from '../../redux/actions';
 import Input from '../Input/Input';
 import './InputContainer.css';
 
-class InputData extends Component {
-  constructor() {
-    super();
-    this.state = {
-      dataName: '',
-      qty: 0,
-      color: 'black',
-    };
-    this.handlerChange = this.handlerChange.bind(this);
-    this.insertData = this.insertData.bind(this);
-  }
+const InputData = ({ addData, addColor }) => {
+  const INITIAL_STATE = { dataName: '', qty: 0, color: 'black' };
 
-  handlerChange({ target }) {
+  const [state, setState] = useState(INITIAL_STATE);
+
+  const handlerChange = ({ target }) => {
     const { name, value } = target;
-    this.setState({ [name]: value });
-  }
+    setState({ ...state, [name]: value });
+  };
 
-  insertData() {
-    const { addData, addColor } = this.props;
-    const { dataName, qty, color } = this.state;
+  const insertData = () => {
+    const { dataName, qty, color } = state;
     addData({ [dataName]: qty });
     addColor(color);
-    this.setState({ dataName: '', qty: 0, color: '' });
-  }
+    setState(INITIAL_STATE);
+  };
 
-  render() {
-    const { dataName, qty, color } = this.state;
-    return (
-      <div className="InputConatiner">
-        <h3>Inserir Dados</h3>
-        <Input type="text" name="dataName" labelText="Nome:" value={dataName} change={this.handlerChange} />
-        <Input type="number" name="qty" labelText="Quantidade:" value={qty} change={this.handlerChange} />
-        <Input type="color" name="color" value={color} labelText="Cor:" change={this.handlerChange} />
-        <button type="button" onClick={this.insertData}>Inserir Dado</button>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="InputConatiner">
+      <h3>Inserir Dados</h3>
+      {
+        inputData.map(({ type, name, labelText }) => (
+          <Input
+            type={type}
+            name={name}
+            labelText={labelText}
+            value={state[name]}
+            change={handlerChange}
+          />
+        ))
+      }
+      <button type="button" onClick={insertData}>Inserir Dado</button>
+    </div>
+  );
+};
 
 const mapDispatchToProps = (dispatch) => ({
   addData: (state) => dispatch(actionAddData(state)),

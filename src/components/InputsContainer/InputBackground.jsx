@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import inputs from '../../data/inputBackground';
+import { inputBackground } from '../../data/inputs';
 import { actionAddBackground } from '../../redux/actions';
 import Input from '../Input/Input';
 import Select from '../Select/Select';
@@ -16,7 +16,7 @@ const InputBackground = ({ state, addBackground }) => {
     <div className="InputConatiner">
       <h3>Estilo Background</h3>
       {
-        inputs.map(({
+        inputBackground.map(({
           type, name, labelText, value,
         }) => (
           <Input
