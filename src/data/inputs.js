@@ -30,3 +30,23 @@ export const inputBar = [
   { type: 'checkbox', name: 'topPercent', labelText: 'Exibir a porcentagem no topo da barra:' },
   { type: 'checkbox', name: 'baseName', labelText: 'Exibir o nome na base da barra:' },
 ];
+
+export const legend = [
+  { type: 'number', name: 'fontLegendSize', labelText: 'Tamanho da fonte:' },
+  { type: 'color', name: 'fontColorLegend', labelText: 'Cor da fonte:' },
+  { type: 'color', name: 'colorLegend', labelText: 'Cor de, fundo da legenda:' },
+  { type: 'number', name: 'borderLegend', labelText: 'Largura da, borda:' },
+  { type: 'color', name: 'colorBorderLegend', labelText: 'Cor da, borda:' },
+  {
+    type: 'radio', name: 'legendSide', labelText: 'Esquerdo', value: 'left',
+  },
+  {
+    type: 'radio', name: 'legendSide', labelText: 'Direito', value: 'right',
+  },
+  {
+    type: 'radio', name: 'legendVertical', labelText: 'Superior', value: 'atop',
+  },
+  {
+    type: 'radio', name: 'legendVertical', labelText: 'Inferior', value: 'bottom',
+  },
+];
