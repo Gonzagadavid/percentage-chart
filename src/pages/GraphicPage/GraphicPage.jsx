@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { PercentChart } from 'stylized-percentage-chart';
+import { GraphicComponent } from 'stylized-graphic-component';
 import NavSet from '../../components/NavSet/NavSet';
 
 import './GraphicPage.css';
@@ -13,7 +13,7 @@ const GraphicPage = (props) => {
     <div className="GraphicPage">
       <NavSet />
       <div className="graphic">
-        <PercentChart
+        <GraphicComponent
           style={style}
           data={data}
           maxPercent={maxPercent}
