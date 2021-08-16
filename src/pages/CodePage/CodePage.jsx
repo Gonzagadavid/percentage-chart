@@ -14,6 +14,7 @@ const CodePage = ({
 }) => {
   const objectCode = useRef(null);
   const npm = useRef(null);
+  const importLine = useRef(null);
   const importComp = useRef(null);
   const objData = `${Object
     .entries(data)
@@ -106,6 +107,16 @@ export default style
         Importe o componete stylized-percentage-chart  e passe os dados do estilo e os dados a ser
         renderizado como props
       </p>
+      <div className="code">
+        <button type="button" className="copy-button" onClick={() => copyToClip(importLine)}>
+          <FaRegCopy />
+        </button>
+        <Highlight className="language-javascript">
+          <p ref={importLine}>
+            {'import { GraphicComponent } from \'stylized-graphic-component\'' }
+          </p>
+        </Highlight>
+      </div>
       <div className="code">
         <button type="button" className="copy-button" onClick={() => copyToClip(importComp)}>
           <FaRegCopy />
