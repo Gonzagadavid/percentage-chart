@@ -4,7 +4,7 @@
   align-items: center;
   margin: 5px 20px;
   padding: 10px;
-  border: solid black 1px;
+  background-color: rgba(0,0,0,0.5);
 }
 
 .EditBar input[type="number"] {
@@ -13,7 +13,8 @@
 }
 
 .EditBar button[type="button"] {
-  width: 80px;
+  width: 50px;
+  height: 40px;
 }
 
 .EditBar h3 {

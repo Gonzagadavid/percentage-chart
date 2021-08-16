@@ -64,11 +64,13 @@ body {
 
 .App button {
   align-self: center;
-  background-color: green;
+  background-color: rgb(115, 165, 189);
+  color: rgb(11, 4, 112);
   border: none;
   margin: 5px;
   padding: 10px;
   font-size: 20px;
-  color: white
+  border-radius: 5px;
+  cursor: pointer;
 }
 

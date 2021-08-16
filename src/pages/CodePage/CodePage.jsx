@@ -89,7 +89,6 @@ export default style
       </div>
       <p>
         Instale o componente libary em sua aplicação
-        (caso ocorra conflitos de versões, use o --force, isso não altera sua aplicação)
       </p>
       <div className="code">
         <button type="button" className="copy-button" onClick={() => copyToClip(npm)}>
@@ -100,6 +99,8 @@ export default style
             npm i stylized-graphic-component
           </p>
         </Highlight>
+        <em>a versão atual é com react 17.0.2, a versão 1.0.5 utiliza a 16.12.0 - </em>
+        <em>npm i stylized-graphic-component@1.0.5</em>
       </div>
       <p>
         Importe o componete stylized-percentage-chart  e passe os dados do estilo e os dados a ser
