@@ -1,9 +1,16 @@
 import React from 'react';
+import { FaReact } from 'react-icons/fa';
 import './Home.css';
 
 const Home = () => (
   <div className="Home">
-    <h1>Stylized Graphic Component</h1>
+    <h1>
+      <FaReact />
+      {' '}
+      Stylized Graphic Component
+      {' '}
+      <FaReact />
+    </h1>
     <p>
       Essa página tem como finalidade auxiliar na estilização do componente
       libary stylized-percentage-chart
